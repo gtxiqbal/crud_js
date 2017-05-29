@@ -39,11 +39,35 @@ router.post('/demo4', function (req, res, next) {
     res.json({
         title : 'Data Input',
         data : {
-          username : req.params('username'),
-            tgl_lahir: req.params('tgl_lahir'),
-            alamat : req.params('alamat')
+          username : req.param('username'),
+            tgl_lahir: req.param('tgl_lahir'),
+            alamat : req.param('alamat')
         }
     });
+});
+
+router.put('/demo5', function (req, res, next) {
+	res.json({
+		title : 'Data PUT',
+		data : {
+			user : req.param('user'),
+			email : req.param('email')
+		}
+	});
+});
+
+router.delete('/demo6/:id_demo', function (req, res, next) {
+	res.json({
+		pesan : 'sudah terdelet demo '+req.params.id_demo
+	});
+});
+
+router.get('/demo7', function (req, res, next) {
+	res.redirect('/demo7_hasil');
+});
+
+router.get('/demo7_hasil', function (req, res, next) {
+	res. render('demo7');
 });
 
 module.exports = router;

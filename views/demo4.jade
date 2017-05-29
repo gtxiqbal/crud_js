@@ -1,4 +1,12 @@
 extends layout
 
 block content
-   p aaaa
+   h1 #{title}
+   form(action='/demo4', method='post')
+      input(type='text', name='username', placeholder='masukkan username')
+      br
+      input(type='date', name='tgl_lahir', placeholder='masukkan tanggal lahir')
+      br
+      textarea(name='alamat', placeholder='masukan alamat')
+      br
+      input(type='submit', value='INPUT')
